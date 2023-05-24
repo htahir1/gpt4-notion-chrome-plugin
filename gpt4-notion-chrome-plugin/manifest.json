@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "GPT-4 to Notion",
+    "version": "1.0",
+    "description": "Copy the contents of the GPT-4 playground page and create a Notion page",
+    "permissions": ["activeTab", "https://www.notion.so/*"],
+    "background": {
+        "scripts": ["content.js"],
+        "persistent": false
+      },
+    "browser_action": {
+        "default_title": "Create Notion Page",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
